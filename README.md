@@ -89,3 +89,114 @@ CREATE TABLE `packages` (
   PRIMARY KEY (`id`)
 );
 ```
+
+#### a. `wishlist` Table
+
+```sql
+CREATE TABLE `wishlist` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `package_id` int(11) NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`package_id`) REFERENCES `packages`(`id`) ON DELETE CASCADE
+);
+```
+**Note**: The customer_id field assumes a simple setup with a default value. For a complete application, implement a user authentication system.
+
+## Project Configuration
+
+### 1. Download the Project Files
+Obtain the `hotel_reservation` project folder containing all the necessary files and directories.
+
+### 2. Place the Project in the Web Server Directory
+
+- **Windows (XAMPP):** Copy the `hotel_reservation` folder to `C:\\xampp\\htdocs\\`.
+- **macOS (MAMP):** Copy the folder to `/Applications/MAMP/htdocs/`.
+- **Linux (Apache default):** Copy the folder to `/var/www/html/`.
+
+### 3. Configure Database Connection
+
+- Open the `db.php` file located in the `hotel_reservation` folder.
+- Ensure the database credentials match your setup:
+
+```php
+<?php
+$host = "localhost";
+$user = "root";
+$password = ""; // For XAMPP, the default password is empty
+$database = "hotel_reservation";
+
+$conn = mysqli_connect($host, $user, $password, $database);
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+?>
+```
+- If you have set a password for your MySQL root user, update the `$password` variable accordingly.
+
+### 4. Set Permissions for the `images` Directory
+
+- Ensure the `images` directory within `hotel_reservation` is writable, as images will be uploaded here.
+- On Linux or macOS, you may need to set permissions:
+  ```bash
+  chmod -R 755 /path/to/hotel_reservation/images
+  ```
+
+## Running the Project
+
+### 1. Access the Application in the Browser
+
+- Open your web browser.
+- Navigate to `http://localhost/hotel_reservation/`.
+
+### 2. Admin Operations
+To add, update, or delete hotel packages, access the following pages:
+
+- **Add Package**: `http://localhost/hotel_reservation/add_package.php`
+- **View Packages (Admin)**: `http://localhost/hotel_reservation/admin_view_packages.php`
+
+### 3. User Operations
+To view packages and manage the wishlist:
+
+- **View Packages**: `http://localhost/hotel_reservation/view_packages.php`
+- **View Wishlist**: `http://localhost/hotel_reservation/view_wishlist.php`
+
+## Usage
+
+### 1. Adding a New Package (Admin)
+
+- Navigate to the Add Package page.
+- Fill in the package details and upload an image.
+- Submit the form to add the package.
+- Upon successful addition, you will be redirected to the Admin View Packages page.
+
+### 2. Managing Packages (Admin)
+ 
+- On the Admin View Packages page, you can:
+  - Update a package by clicking the Update button.
+  - Delete a package by clicking the Delete button.
+- After updating or deleting, the page will refresh to reflect the changes.
+
+### 3. Viewing Packages (User)
+
+- Navigate to the View Packages page.
+- Browse through the packages displayed as tiles.
+- Click Add to Wishlist to add a package to your wishlist.
+- Toast notifications will confirm your actions.
+
+### 4. Managing Wishlist (User)
+
+- Navigate to the View Wishlist page.
+- View packages added to your wishlist.
+- Remove packages by clicking Remove from Wishlist.
+- The page will refresh to reflect the updated wishlist.
+
+
+
+
+
+
+
+
+
