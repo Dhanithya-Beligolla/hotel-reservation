@@ -13,7 +13,7 @@ This README provides a complete guide to set up the **Hotel Reservation** projec
 - [Running the Project](#running-the-project)
 - [Usage](#usage)
 - [Troubleshooting](#troubleshooting)
-- [Credits](#credits)
+- [Technologies Used](#technologies-used)
 
 ## Introduction
 
