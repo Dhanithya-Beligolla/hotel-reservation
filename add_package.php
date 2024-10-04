@@ -10,7 +10,7 @@
             position: relative;
             width: 100%; /* Set the width to 100% to make it fit the container */
         }
-
+ 
         #imageInput {
             width: 100%; /* Make the input fit the width of the container */
             box-sizing: border-box; /* Ensure padding and borders are included in the width */
