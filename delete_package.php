@@ -4,7 +4,7 @@ include 'db.php';
 
 $id = $_GET['id'];
 
-$sql = "DELETE FROM packages WHERE id='$id'";
+$sql = "DELETE FROM packages WHERE id='$id'"; 
 
 if (mysqli_query($conn, $sql)) {
     echo "<script>
