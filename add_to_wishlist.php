@@ -9,7 +9,7 @@ $sql = "INSERT INTO wishlist (package_id, customer_id) VALUES ('$package_id', '$
 if (mysqli_query($conn, $sql)) {
     echo "<script>
             alert('Product successfully added to wishlist!');
-            window.location.href = 'view_wishlist.php';
+            window.location.href = 'view_packages.php';
           </script>";
 } else {
     echo "Error: " . mysqli_error($conn);
