@@ -192,10 +192,29 @@ To view packages and manage the wishlist:
 - Remove packages by clicking Remove from Wishlist.
 - The page will refresh to reflect the updated wishlist.
 
+## Troubleshooting
 
+### Database Connection Errors:
+- Ensure the MySQL service is running.
+- Verify the database credentials in `db.php`.
 
+### Images Not Uploading:
+- Check write permissions on the images directory.
 
+### Pages Not Loading:
+- Ensure you have placed the project folder in the correct directory.
+- Verify that Apache is running.
 
+### Undefined Index or Variable Errors:
+- Ensure all forms are submitted correctly.
+- Check that all necessary data is being passed via GET or POST.
+
+## Technologies Used:
+- HTML
+- CSS
+- JavaScript
+- PHP
+- MySQL
 
 
 
